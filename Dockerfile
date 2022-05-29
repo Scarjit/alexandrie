@@ -42,7 +42,7 @@ COPY Cargo.lock Cargo.lock
 RUN cd crates/alexandrie && cargo build --release --no-default-features --features "${DATABASE} frontend git2"
 
 ### Second stage: copy built application
-FROM debian:buster-slim as runner
+FROM debian:10.12-slim as runner
 
 ARG DATABASE
 
